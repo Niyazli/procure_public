@@ -1,0 +1,66 @@
+<mat-card>
+  <section class="row">
+    <div class="col-12">
+      <app-register-form></app-register-form>
+    </div>
+  </section>
+
+  <mat-divider></mat-divider>
+
+  <section class="row">
+    <div class="col-lg-6">
+      <p>Please select at least 1 category. It will help you to find an exact events and meet more opportunities</p>
+      <app-expansion-cpv-tree [multiple]="true" title="Categories" [expanded]="true"></app-expansion-cpv-tree>
+    </div>
+    <div class="col-lg-6">
+      <p>Selected categories</p>
+      <table class="table mat-elevation-z4">
+        <tbody>
+          <tr>
+            <td>03000000-1 Kənd təsərrüfatı, fermerlik, balıqçılıq, meşə təsərrüfatı və əlaqədar məhsullar</td>
+            <td class="table-col__xs">
+              <button mat-icon-button color="warn"><mat-icon>close</mat-icon></button>
+            </td>
+          </tr>
+          <tr>
+            <td>09000000-3 Neft məhsulları, yanacaq , elektrik və digər enerji mənbələri</td>
+            <td class="table-col__xs">
+              <button mat-icon-button color="warn"><mat-icon>close</mat-icon></button>
+            </td>
+          </tr>
+          <tr>
+            <td>14000000-1 Mədənçilik, əsas metallar və əlaqədar məhsullar</td>
+            <td class="table-col__xs">
+              <button mat-icon-button color="warn"><mat-icon>close</mat-icon></button>
+            </td>
+          </tr>
+          <tr>
+            <td>03000000-1 Kənd təsərrüfatı, fermerlik, balıqçılıq, meşə təsərrüfatı və əlaqədar məhsullar</td>
+            <td class="table-col__xs">
+              <button mat-icon-button color="warn"><mat-icon>close</mat-icon></button>
+            </td>
+          </tr>
+          <tr>
+            <td>15000000-8 Qıda,ıçki, tütun və əlaqədar məhsullar</td>
+            <td class="table-col__xs">
+              <button mat-icon-button color="warn"><mat-icon>close</mat-icon></button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <mat-divider></mat-divider>
+
+  <section class="row">
+    <div class="col-6 text-center">
+      <p>You can verify you organization lately, but you are alreday will be visible for Buyong organizations</p>
+      <button mat-stroked-button>I`ll do it later</button>
+    </div>
+    <div class="col-6 text-center">
+      <p>Please note that for ASAN Verification you will need Director`s digital sign</p>
+      <button mat-raised-button color="primary">Verify with ASAN Imza</button>
+    </div>
+  </section>
+</mat-card>

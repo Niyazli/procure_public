@@ -1,0 +1,7 @@
+@import 'src/assets/styles/sass/utils/color';
+
+.stroked {
+  &--white {
+    border-color: $white !important;
+  }
+}

@@ -1,0 +1,15 @@
+mat-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 0;
+
+  h4 {
+    text-transform: uppercase;
+    margin-left: 25px;
+  }
+
+  mat-list-item {
+    display: inline-block;
+  }
+}

@@ -1,0 +1,35 @@
+@import 'src/assets/styles/sass/utils/media-queries';
+
+.wrapper {
+  @include fullhd() {
+    max-width: 80%;
+    margin: 0 auto;
+  }
+
+  section {
+    &:not(:first-child) {
+      margin-top: 45px;
+      @include fullhd() {
+        max-width: 85%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+
+    .tender-types {
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(4, 220px);
+        grid-gap: 20px;
+        justify-content: center;
+
+        @include touch() {
+          grid-template-columns: repeat(2, 220px);
+        }
+        @include mobile() {
+          grid-template-columns: repeat(1, 220px);
+        }
+      }
+    }
+  }
+}

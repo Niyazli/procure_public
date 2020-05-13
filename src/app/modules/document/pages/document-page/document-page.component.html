@@ -1,0 +1,33 @@
+<mat-card>
+  <ng-template #loader> <mat-progress-bar mode="indeterminate"></mat-progress-bar> </ng-template>
+  <ng-container *ngIf="document; else loader">
+    <section class="row">
+      <div class="col-12">
+        <app-event-info-table [document]="document"></app-event-info-table>
+      </div>
+    </section>
+    <section class="row">
+      <div class="col-12">
+        <app-event-date-table [document]="document"></app-event-date-table>
+      </div>
+    </section>
+    <section class="row">
+      <div class="col-12">
+        <mat-card class="d-flex align-items-center mat-elevation-z4 rounded-0 mx-1">
+          <img src="assets/images/organizations/asan-imza.png" alt="Asan IMZA" width="172" />
+          <b class="ml-3">For this event Buying organization requires Digital sign for all proposals</b>
+        </mat-card>
+      </div>
+    </section>
+    <section class="row">
+      <div class="col-12">
+        <app-data-table [tableBordered]="true" [tableData]="[document.contactPerson]" [tableHeaders]="contactPersonHeader"></app-data-table>
+      </div>
+    </section>
+    <section class="row">
+      <div class="col-12">
+        <app-lot-wrapper [lots]="document.lots"></app-lot-wrapper>
+      </div>
+    </section>
+  </ng-container>
+</mat-card>

@@ -1,0 +1,61 @@
+<main class="wrapper">
+  <section>
+    <div class="row">
+      <div class="col-md-6 d-flex align-items-center">
+        <h2>
+          Register now and become one of 3546 suppliers! Get all information about events under you category, as soon as they will be published.
+        </h2>
+      </div>
+      <div class="col-md-6 d-flex align-items-center">
+        <app-card-register></app-card-register>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="row">
+      <div class="col-12">
+        <mat-tab-group #tabGroup mat-stretch-tabs color="accent" class="separator--white">
+          <mat-tab *ngFor="let service of services; let i = index">
+            <ng-template matTabLabel>
+              <h3 class="text-white" [ngClass]="{'text-accent': tabGroup.selectedIndex === i}">{{ service.label }}</h3>
+            </ng-template>
+            <ng-template matTabContent>
+              <main class="text-center py-3">
+                <p>{{ service.content }}</p>
+                <button class="stroked--white" mat-stroked-button>VIEW</button>
+              </main>
+            </ng-template>
+          </mat-tab>
+        </mat-tab-group>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="row">
+      <div class="col-12 my-2 tender-types">
+        <div class="grid">
+          <ng-container *ngFor="let type of tenderTypes">
+            <app-card-tender-type [tenderType]="type"></app-card-tender-type>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="row">
+      <div class="col-12">
+        <app-homepage-statistics></app-homepage-statistics>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="row">
+      <div class="col-12">
+        <div class="d-flex align-items-center justify-content-between px-4">
+          <input type="text" class="form-control" placeholder="search by keyword" />
+          <button mat-raised-button class="ml-2" color="accent"><mat-icon>search</mat-icon></button>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>

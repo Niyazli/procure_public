@@ -1,0 +1,33 @@
+@import 'src/assets/styles/sass/utils/color';
+@import 'src/assets/styles/sass/utils/media-queries';
+
+mat-button-toggle-group {
+  display: flex;
+  border: none !important;
+
+  @include touch() {
+    flex-direction: column;
+  }
+
+  mat-button-toggle {
+    border: none !important;
+    outline: none !important;
+    width: calc(100% / 5);
+    padding-bottom: 10px;
+
+    @include touch() {
+      width: 100%;
+    }
+
+    &.isActive {
+      background-color: transparent !important;
+      border-bottom: 2px solid $primary !important;
+      color: $primary !important;
+      font-weight: 500 !important;
+    }
+
+    span {
+      white-space: normal;
+    }
+  }
+}

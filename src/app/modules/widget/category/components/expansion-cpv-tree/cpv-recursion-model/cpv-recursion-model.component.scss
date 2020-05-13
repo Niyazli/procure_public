@@ -1,0 +1,29 @@
+//mat-list-item {
+//  height: 100%;
+//}
+
+ul {
+  list-style: none;
+  li {
+    list-style: none;
+
+    .list-item {
+      display: flex;
+      align-items: center;
+
+      mat-checkbox,
+      mat-radio-button {
+        padding-top: 9px;
+      }
+
+      h4 {
+        margin: 0;
+        font-size: 14px;
+      }
+
+      > * {
+        margin: 0 5px;
+      }
+    }
+  }
+}

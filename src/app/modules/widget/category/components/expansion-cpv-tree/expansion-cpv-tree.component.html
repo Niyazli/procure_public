@@ -1,0 +1,26 @@
+<div class="wrapper" [ngClass]="{static: staticWidth}">
+  <mat-accordion class="isPrimary treeList">
+    <mat-expansion-panel [expanded]="expanded">
+      <mat-expansion-panel-header [ngClass]="{'d-none': hideHeader}">
+        <mat-panel-title class="text-white">{{ title }}</mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <ng-template matExpansionPanelContent>
+        <div class="category" [ngClass]="{'h-100': fullHeight}" [style.height.px]="listHeight">
+          <mat-form-field class="px-5 mt-3 w-100">
+            <mat-label>Keyword</mat-label>
+            <input autocomplete="off" matInput placeholder="enter a keyword" name="keyword" [(ngModel)]="keyword" (change)="filterCategories()" />
+            <mat-icon matSuffix>search</mat-icon>
+          </mat-form-field>
+          <app-cpv-recursion-model
+            (selectedCategory)="selectedCategory.emit($event)"
+            [multiple]="multiple"
+            [categories]="categories"
+            ($getChild)="getChild($event)"
+          ></app-cpv-recursion-model>
+        </div>
+      </ng-template>
+      <mat-progress-bar mode="indeterminate" color="primary" *ngIf="loadingState"></mat-progress-bar>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>

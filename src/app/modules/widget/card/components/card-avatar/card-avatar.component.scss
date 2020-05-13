@@ -1,0 +1,22 @@
+:host {
+  text-align: center;
+}
+
+mat-card {
+  width: 150px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  mat-icon {
+    color: #a5a5a5;
+    width: 30px;
+    height: 30px;
+    font-size: 30px;
+  }
+}
+a {
+  text-decoration: underline;
+  margin-top: 10px;
+}

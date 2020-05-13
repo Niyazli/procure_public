@@ -1,0 +1,64 @@
+@import 'src/assets/styles/sass/utils/color';
+
+//TABS
+mat-tab-group {
+  .mat-tab-label {
+    opacity: 1 !important;
+  }
+  &.separator--white {
+    mat-tab-header {
+      border-color: rgba($white, 0.5) !important;
+    }
+  }
+}
+
+//BUTTON
+mat-button-toggle {
+  button {
+    height: 100%;
+    .mat-button-toggle-label-content {
+      width: 100% !important;
+      line-height: 2rem !important;
+    }
+  }
+}
+
+//FORM
+mat-form-field.is-white {
+  .mat-form-field-label,
+  .mat-input-element {
+    color: $white !important;
+    caret-color: $white;
+  }
+  .mat-form-field-underline {
+    background-color: $white !important;
+  }
+}
+
+//EXPANSION PANEL
+.isPrimary {
+  mat-expansion-panel {
+    &-header {
+      background: $primary !important;
+      background-color: $primary !important;
+
+      mat-panel-title,
+      mat-panel-description {
+        color: $white;
+      }
+      .mat-expansion-indicator:after {
+        color: $white;
+      }
+      &:hover {
+        background: rgba($primary, 0.9) !important;
+        background-color: rgba($primary, 0.9) !important;
+      }
+    }
+  }
+
+  &.treeList {
+    .mat-expansion-panel-body {
+      padding: 0;
+    }
+  }
+}

@@ -1,0 +1,21 @@
+@import 'src/assets/styles/sass/utils/media-queries';
+@import 'src/assets/styles/sass/utils/color';
+
+.button-group {
+  width: 280px;
+  margin: 15px 50px;
+
+  @include touch() {
+    margin: 15px auto;
+    width: 280px;
+  }
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  &.isActive {
+    background-color: $primary;
+    color: $white;
+  }
+}

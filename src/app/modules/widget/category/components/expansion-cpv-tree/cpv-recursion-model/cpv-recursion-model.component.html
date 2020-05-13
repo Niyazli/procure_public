@@ -1,0 +1,44 @@
+<ul>
+  <li *ngFor="let category of categories">
+    <!--            <pr-cpv-tree-list></pr-cpv-tree-list>-->
+    <div class="d-flex align-items-start flex-column">
+      <div class="list-item">
+        <button type="button" [disabled]="!category.hasChild" (click)="getChild(category)" mat-icon-button>
+          <mat-icon>{{ !!category.subCategories && category.subCategories?.length > 0 ? 'keyboard_arrow_down' : 'keyboard_arrow_right' }}</mat-icon>
+        </button>
+        <mat-radio-button (click)="selectCategory(category)" [checked]="category.checked" color="primary" *ngIf="!multiple">
+          <h4 class="text-normal">
+            {{ category.name }}
+            <b *ngIf="category.organizationsCount">({{ category.organizationsCount }} suppliers)</b>
+          </h4>
+        </mat-radio-button>
+        <mat-checkbox
+          [(ngModel)]="category.checked"
+          (ngModelChange)="selectCategory(category)"
+          [checked]="category.checked"
+          color="primary"
+          *ngIf="multiple"
+        >
+          <h4 class="text-normal">
+            {{ category.name }}
+            <b *ngIf="category.organizationsCount">({{ category.organizationsCount }} suppliers)</b>
+          </h4>
+        </mat-checkbox>
+      </div>
+
+      <span *ngIf="category.subCategories">
+        <!--        && !category.collapsed-->
+        <app-cpv-recursion-model
+          [multiSelected]="multiSelected"
+          [multiple]="multiple"
+          ($getChild)="getChild($event)"
+          (selectedCategory)="selectedCategory.emit($event)"
+          [categories]="category.subCategories"
+        ></app-cpv-recursion-model>
+      </span>
+      <span *ngIf="category.cpvCodes">
+        <p *ngFor="let cpvCode of category.cpvCodes" class="ml-5">{{ cpvCode.name }}</p>
+      </span>
+    </div>
+  </li>
+</ul>

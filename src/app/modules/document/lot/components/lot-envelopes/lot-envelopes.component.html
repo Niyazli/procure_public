@@ -1,0 +1,17 @@
+<ng-container>
+  <ng-container *ngFor="let envelop of envelopes">
+    <section class="row" *ngFor="let section of envelop.sections">
+      <div class="col-12">
+        <app-data-table
+          [tableData]="section.criteria"
+          [tableHeaders]="getTableHeader(envelop)"
+          [tableBordered]="true"
+          [tableTitle]="section.name"
+        ></app-data-table>
+      </div>
+      <section class="col-12" *ngIf="section.isPriceSection">
+        <app-data-table [tableData]="section.bom" [tableHeaders]="bomHeader" [tableBordered]="true" tableTitle="BoM"></app-data-table>
+      </section>
+    </section>
+  </ng-container>
+</ng-container>

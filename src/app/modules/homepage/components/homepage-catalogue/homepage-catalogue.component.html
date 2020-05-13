@@ -1,0 +1,43 @@
+<div class="row">
+  <div class="col-12">
+    <h2>COMPANIES Catalogue</h2>
+  </div>
+  <div class="col-xl-5">
+    <mat-card class="h-100">
+      <h4>
+        <b>
+          We are constantly working to improve and enrich the catalog of Buying and Supplying organizations. Today, there are 1562 buyer and 3685
+          supplier organizations registered on the platform.
+        </b>
+      </h4>
+      <div class="chart"></div>
+      <footer class="text-center">
+        <button color="primary" class="m-2" mat-stroked-button>View Catalogue</button>
+        <button color="primary" class="m-2" mat-raised-button>Register as supplier</button>
+      </footer>
+    </mat-card>
+  </div>
+  <div class="col-xl-7">
+    <mat-card>
+      <h4><b>TOP 5 SUPPLIER CATEGORIES</b></h4>
+      <mat-list>
+        <ng-container *ngFor="let cat of [].constructor(5)">
+          <mat-divider></mat-divider>
+          <mat-list-item class="my-3">
+            <mat-icon color="primary" matListIcon>euro_symbol</mat-icon>
+            <span class="d-flex" matLine>
+              <span
+                class="cute-text-by-line d-block"
+                matTooltip="37000000-8-Musiqi alətləri, idman malları, oyunlar , oyuncaqlar, sənətkarlıq , incəsənət materialları və aksesuarlar"
+              >
+                37000000-8-Musiqi alətləri, idman malları, oyunlar , oyuncaqlar, sənətkarlıq , incəsənət materialları və aksesuarlar
+              </span>
+              <b class="ml-2">358 Companies</b>
+            </span>
+          </mat-list-item>
+        </ng-container>
+        <mat-divider></mat-divider>
+      </mat-list>
+    </mat-card>
+  </div>
+</div>

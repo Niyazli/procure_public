@@ -1,0 +1,22 @@
+<mat-card>
+  <section class="py-3">
+    <ng-content></ng-content>
+  </section>
+  <main>
+    <ng-container *ngIf="documentService.isCardType | async">
+      <ng-container *ngIf="!loadingState; else skeleton">
+        <app-card-documents ($action)="navigate($event)" [document]="document" *ngFor="let document of documents"></app-card-documents>
+      </ng-container>
+      <ng-template #skeleton>
+        <app-card-skeleton></app-card-skeleton>
+      </ng-template>
+    </ng-container>
+
+    <ng-container *ngIf="!(documentService.isCardType | async)">
+      <app-data-table ($action)="navigate($event)" [loadingState]="loadingState" [tableHeaders]="documentHeader" [tableData]="documents"></app-data-table>
+    </ng-container>
+  </main>
+  <footer class="text-center py-2">
+    <button *ngIf="!(documentService.isCardType | async)" mat-raised-button color="primary">View all</button>
+  </footer>
+</mat-card>

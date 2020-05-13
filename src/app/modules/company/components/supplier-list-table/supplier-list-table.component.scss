@@ -1,0 +1,31 @@
+@import 'src/assets/styles/sass/utils/media-queries';
+
+.table {
+  min-width: 100%;
+  margin-bottom: 5px;
+  @include touch() {
+    width: max-content;
+  }
+
+  tbody,
+  thead {
+    background-color: transparent;
+    th {
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+    th,
+    td {
+      font-size: 1rem !important;
+      vertical-align: middle !important;
+      padding: 6px 8px;
+
+      img {
+        width: 60px;
+        height: 60px;
+        object-fit: contain;
+        margin: auto;
+      }
+    }
+  }
+}

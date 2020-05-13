@@ -1,0 +1,20 @@
+@import 'src/assets/styles/sass/utils/media-queries';
+.wrapper {
+  &.static {
+    width: 800px;
+    @include mobile() {
+      width: 250px;
+    }
+  }
+  .category {
+    height: 500px;
+    overflow-y: auto;
+
+    mat-form-field {
+      position: sticky;
+      top: 0;
+      background-color: #fff;
+      z-index: 9;
+    }
+  }
+}

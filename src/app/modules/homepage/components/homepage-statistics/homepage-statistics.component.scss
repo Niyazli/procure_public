@@ -1,0 +1,58 @@
+@import 'src/assets/styles/sass/utils/color';
+@import 'src/assets/styles/sass/utils/media-queries';
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+.statistic {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  &-box {
+    flex-basis: calc(100% / 3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+
+    @include touch() {
+      flex-basis: 100%;
+    }
+
+    &:not(:last-child) {
+      border-right: 1px solid rgba($white, 0.5);
+
+      @include touch() {
+        border: none;
+      }
+    }
+  }
+  &-count {
+    display: flex;
+    align-items: center;
+    h2 {
+      font-size: 4rem;
+
+      @include touch() {
+        width: 200px;
+        text-align: right;
+      }
+    }
+    p {
+      font-size: 1.3rem;
+      width: min-content;
+      margin-left: 1.3rem;
+    }
+  }
+  &-new {
+    margin-top: 1rem;
+    font-size: 1rem;
+    color: $accent;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+}
