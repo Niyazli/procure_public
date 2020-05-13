@@ -1,0 +1,42 @@
+.table {
+  &.paddingless {
+    th,
+    td {
+      padding: 0 !important;
+      margin: 0 !important;
+      padding-left: 10px !important;
+    }
+  }
+
+  &-col {
+    &__m {
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+      width: 160px;
+      max-width: 160px;
+    }
+    &__s {
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+      width: 110px;
+      max-width: 110px;
+    }
+    &__xs {
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+      width: 50px;
+      max-width: 50px;
+      padding: 0 !important;
+      text-align: center;
+
+      button {
+        border-radius: 0 !important;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
